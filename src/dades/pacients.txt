@@ -1,0 +1,8 @@
+G;U001;Laia Puig;30;false;false;true
+T;U002;Pere Mas;66;true;braç esquerre
+C;U003;Joan Vidal;50;false;22
+A;U004;Marta Roig;41;false;mal de cap fort des d'ahir
+G;U005;Núria Soler;27;true;true;false
+C;U006;Jordi Ferrer;72;true;45
+T;U007;Anna Costa;17;false;turmell dret
+A;U008;Pau Serra;35;false;febre alta i tos

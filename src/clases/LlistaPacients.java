@@ -1,14 +1,15 @@
-package src.dades;
+package src.clases;
+
 import java.io.Serializable;
 
 /**
  * Llista dels pacients de la sala d'espera d'urgències, implementada amb una
- * taula i un comptador d'elements (sense estructures de dades predefinides de Java).
+ * taula i un comptador d'elements (sense estructures de dades predefinides de
+ * Java).
  */
 public class LlistaPacients implements Serializable {
     private Pacient[] llista;
     private int nElem;
-
 
     /**
      * Constructor que crea una llista buida amb capacitat per a mida pacients.
@@ -20,7 +21,6 @@ public class LlistaPacients implements Serializable {
         nElem = 0;
     }
 
-
     /**
      * Consulta el nombre de pacients que hi ha a la llista.
      *
@@ -29,7 +29,6 @@ public class LlistaPacients implements Serializable {
     public int getNumElem() {
         return nElem;
     }
-
 
     /**
      * Consulta el pacient d'una posició de la llista.
@@ -42,7 +41,6 @@ public class LlistaPacients implements Serializable {
             return null;
         return llista[pos];
     }
-
 
     /**
      * Retorna un String amb tots els pacients de la llista, numerats.
@@ -58,25 +56,22 @@ public class LlistaPacients implements Serializable {
         return aux;
     }
 
+    /**
+     * Afegeix un pacient al final de la llista (ordre d'arribada).
+     * 
+     * @param p pacient que arriba a la sala d'espera
+     * @return true si s'ha pogut afegir el pacient, false si la sala ja és plena
+     */
+    public boolean afegir(Pacient p) {
+        if (nElem == llista.length) {
+            // La sala ja és plena, no es pot afegir el pacient
+            return false;
+        }
 
-   /**
- * Afegeix un pacient al final de la llista (ordre d'arribada).
- * 
- * @param p pacient que arriba a la sala d'espera
- * @return true si s'ha pogut afegir el pacient, false si la sala ja és plena
- */
-public boolean afegir(Pacient p) {
-    if (nElem == llista.length) {
-        // La sala ja és plena, no es pot afegir el pacient
-        return false;
+        llista[nElem] = p;
+        nElem++;
+        return true;
     }
-    
-    llista[nElem] = p;
-    nElem++;
-    return true;
-}
-
-
 
     /**
      * Elimina de la llista el pacient amb el codi indicat, desplaçant els
@@ -102,7 +97,6 @@ public boolean afegir(Pacient p) {
         return eliminat;
     }
 
-
     /**
      * Assigna el grau d'urgència (cribratge) al pacient amb el codi indicat.
      *
@@ -114,7 +108,6 @@ public boolean afegir(Pacient p) {
         return false;
     }
 
-
     /**
      * Suma x punts al grau d'urgència de tots els pacients de la llista.
      *
@@ -123,7 +116,6 @@ public boolean afegir(Pacient p) {
     public void incrementarUrgencia(double x) {
         // TODO
     }
-
 
     /**
      * Treu de la llista el pacient amb el grau d'urgència més alt. En cas
@@ -136,11 +128,11 @@ public boolean afegir(Pacient p) {
         return null;
     }
 
-
     /**
      * Compta quants pacients hi ha d'una especialitat.
      *
-     * @param especialitat nom de l'especialitat (no distingeix majúscules i minúscules)
+     * @param especialitat nom de l'especialitat (no distingeix majúscules i
+     *                     minúscules)
      * @return nombre de pacients de l'especialitat
      */
     public int comptarEspecialitat(String especialitat) {
@@ -148,18 +140,17 @@ public boolean afegir(Pacient p) {
         return 0;
     }
 
-
     /**
      * Busca el grau d'urgència més alt d'una especialitat.
      *
-     * @param especialitat nom de l'especialitat (no distingeix majúscules i minúscules)
+     * @param especialitat nom de l'especialitat (no distingeix majúscules i
+     *                     minúscules)
      * @return el grau més alt, o -1 si no hi ha cap pacient d'aquesta especialitat
      */
     public double maxUrgenciaEspecialitat(String especialitat) {
         // TODO
         return -1;
     }
-
 
     /**
      * Compta quants pacients tenen al·lèrgia a algun medicament.
@@ -171,7 +162,6 @@ public boolean afegir(Pacient p) {
         return 0;
     }
 
-
     /**
      * Compta quantes pacients de ginecologia tenen diabetis gestacional.
      *
@@ -181,7 +171,6 @@ public boolean afegir(Pacient p) {
         // TODO
         return 0;
     }
-
 
     /**
      * Compta quants pacients de cardiologia porten més de x minuts des de
@@ -194,6 +183,5 @@ public boolean afegir(Pacient p) {
         // TODO
         return 0;
     }
-
 
 }
