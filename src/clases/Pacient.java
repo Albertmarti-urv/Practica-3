@@ -1,4 +1,4 @@
-package src.dades;
+package src.clases;
 import java.io.Serializable;
 
 /**
